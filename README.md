@@ -13,16 +13,25 @@ ability for the page to provide a hint at what the UA should do.
 ## Proposed API change:
 
 Current API is 
-`void webkitFullscreenRequest();`
+```WebIDL
+partial interface Element {
+  Promise<void> requestFullscreen();
+  // ...
+};
+```
 
 Proposed API is
-`void webkitFullscreenRequest(optional FullscreenOptions);`
-
+```WebIDL
+partial interface Element {
+  Promise<void> requestFullscreen(optional FullscreenOptions options);
+  // ...
+};
+```
 
 ## FullscreenOptions IDL
 
-`
+```WebIDL
 dictionary FullscreenOptions {
     boolean prefersNavigationBar = false;
 };
-`
+```
