@@ -31,7 +31,13 @@ partial interface Element {
 ## FullscreenOptions IDL
 
 ```WebIDL
+enum FullscreenNavigationUI {
+  "auto",
+  "show",
+  "hide"
+};
+
 dictionary FullscreenOptions {
-    boolean prefersNavigationBar = false;
+  FullscreenNavigationUI navigationUI = "auto";
 };
 ```
